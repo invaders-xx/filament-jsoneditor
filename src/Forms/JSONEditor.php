@@ -15,12 +15,14 @@ class JSONEditor extends Field implements JSONEditorOptions
     public function modes(array $modes): self
     {
         $this->modes = $modes;
+
         return $this;
     }
 
-    public function height(int $height) : self
+    public function height(int $height): self
     {
         $this->height = $height;
+
         return $this;
     }
 
