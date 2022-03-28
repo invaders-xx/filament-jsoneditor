@@ -35,9 +35,11 @@ return [
 \InvadersXX\FilamentJsoneditor\Forms\JSONEditor::make('editor');
 ```
 ## Options
-
-No options yet implemented.
-
+```php
+\InvadersXX\FilamentJsoneditor\Forms\JSONEditor::make('editor')
+    ->height(500) // Set height to 500px, default is 300
+    ->modes(['code', 'form', 'text', 'tree', 'view', 'preview']); // default is ['code', 'form', 'text', 'tree', 'view', 'preview']
+```
 ## Testing
 
 ```bash
