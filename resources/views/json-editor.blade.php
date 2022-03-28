@@ -11,7 +11,7 @@
     <div x-data="{ state: $wire.entangle('{{ $getStatePath() }}') }"
          x-init="$nextTick(() => {
         const options = {
-            modes: ['code', 'form', 'text', 'tree', 'view', 'preview'],
+            modes: {{ $getModes() }},
             history: true,
             onChange: function(){
             },
@@ -44,8 +44,8 @@
          x-cloak
          wire:ignore>
         @unless($isDisabled())
-            <div x-ref="editor" class="ace_editor"
-                 style="width: 100%; height: 300px;"></div>
+            <div x-ref="editor" class="w-full ace_editor"
+                 style="min-height: 30vh;height:{{ $getHeight() }}px"></div>
         @else
             <div
                 x-html="state"

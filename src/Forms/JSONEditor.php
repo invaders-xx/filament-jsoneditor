@@ -7,34 +7,30 @@ use InvadersXX\FilamentJsoneditor\Interfaces\JSONEditorOptions;
 
 class JSONEditor extends Field implements JSONEditorOptions
 {
+    protected int | Closure | null $height = 300;
+    protected array | Closure | null $modes = ['code', 'form', 'text', 'tree', 'view', 'preview'];
+
     public string $view = 'filament-jsoneditor::json-editor';
 
     public function modes(array $modes): self
     {
+        $this->modes = $modes;
         return $this;
     }
 
-    public function hasJs(): bool
+    public function height(int $height) : self
     {
-        return true;
+        $this->height = $height;
+        return $this;
     }
 
-    public function jsUrl(): string
+    public function getHeight(): ?int
     {
-        $manifest = json_decode(file_get_contents(__DIR__ . '/../../dist/mix-manifest.json'), true);
-
-        return url($manifest['/invaders/json-editor/jsoneditor.min.js']);
+        return $this->evaluate($this->height);
     }
 
-    public function hasCss(): bool
+    public function getModes(): ?string
     {
-        return true;
-    }
-
-    public function cssUrl(): string
-    {
-        $manifest = json_decode(file_get_contents(__DIR__ . '/../../dist/mix-manifest.json'), true);
-
-        return url($manifest['/invaders/json-editor/jsoneditor.min.css']);
+        return json_encode($this->evaluate($this->modes));
     }
 }

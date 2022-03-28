@@ -5,12 +5,7 @@ namespace InvadersXX\FilamentJsoneditor\Interfaces;
 interface JSONEditorOptions
 {
     public function modes(array $modes): self;
-
-    public function hasJs(): bool;
-
-    public function jsUrl(): string;
-
-    public function hasCss(): bool;
-
-    public function cssUrl(): string;
+    public function height(int $height) : self;
+    public function getHeight(): ?int;
+    public function getModes(): ?string;
 }

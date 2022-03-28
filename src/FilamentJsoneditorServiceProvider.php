@@ -13,14 +13,14 @@ class FilamentJsoneditorServiceProvider extends PluginServiceProvider
      * @var string[]
      */
     protected array $scripts = [
-        'invaders-filament-jsoneditor' => __DIR__ . '/../dist/invaders/json-editor/jsoneditor.min.js',
+        'invaders-filament-jsoneditor' => __DIR__ . '/../dist/jsoneditor/jsoneditor.min.js',
     ];
 
     /**
      * @var string[]
      */
     protected array $styles = [
-        'invaders-filament-jsoneditor' => __DIR__ . '/../dist/invaders/json-editor/jsoneditor.min.css',
+        'invaders-filament-jsoneditor' => __DIR__ . '/../dist/jsoneditor/jsoneditor.min.css',
     ];
 
     public function boot()
