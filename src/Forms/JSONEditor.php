@@ -2,6 +2,7 @@
 
 namespace InvadersXX\FilamentJsoneditor\Forms;
 
+use Closure;
 use Filament\Forms\Components\Field;
 use InvadersXX\FilamentJsoneditor\Interfaces\JSONEditorOptions;
 
