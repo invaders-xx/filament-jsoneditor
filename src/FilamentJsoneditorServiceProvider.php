@@ -31,15 +31,15 @@ class FilamentJsoneditorServiceProvider extends PluginServiceProvider
 
     protected function bootPublishing()
     {
-        if (!$this->app->runningInConsole()) {
+        if (! $this->app->runningInConsole()) {
             return;
         }
 
         $this->publishes([
             __DIR__ . '/../dist/jsoneditor/img/jsoneditor-icons.svg' => public_path('filament/assets/img/jsoneditor-icons.svg'),
         ], 'filament-jsoneditor-img');
-
     }
+
     protected function bootLoaders()
     {
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'filament-jsoneditor');
