@@ -1,0 +1,57 @@
+<x-forms::field-wrapper
+    :id="$getId()"
+    :label="$getLabel()"
+    :label-sr-only="$isLabelHidden()"
+    :helper-text="$getHelperText()"
+    :hint="$getHint()"
+    :hint-icon="$getHintIcon()"
+    :required="$isRequired()"
+    :state-path="$getStatePath()"
+>
+    <div x-data="{ state: $wire.entangle('{{ $getStatePath() }}') }"
+         x-init="$nextTick(() => {
+        const options = {
+            modes: ['code', 'form', 'text', 'tree', 'view', 'preview'],
+            history: true,
+            onChange: function(){
+            },
+            onChangeJSON: function(json){
+                state=JSON.stringify(json);
+            },
+            onChangeText: function(jsonString){
+                state=jsonString;
+            },
+            onValidationError: function (errors) {
+                errors.forEach((error) => {
+                  switch (error.type) {
+                    case 'validation': // schema validation error
+                      break;
+                    case 'error':  // json parse error
+                        console.log(error.message);
+                      break;
+                  }
+                })
+            }
+        };
+        if(typeof json_editor !== 'undefined'){
+            json_editor = new JSONEditor($refs.editor, options);
+            json_editor.set(JSON.parse(state));
+        }else{
+            let json_editor = new JSONEditor($refs.editor, options);
+            json_editor.set(JSON.parse(state));
+        }
+     })"
+         x-cloak
+         wire:ignore>
+        @unless($isDisabled())
+            <div x-ref="editor" class="ace_editor"
+                 style="width: 100%; height: 300px;"></div>
+        @else
+            <div
+                x-html="state"
+                class="max-w-none p-3 prose border border-gray-300 rounded shadow-sm"
+            ></div>
+        @endunless
+    </div>
+</x-forms::field-wrapper>
+

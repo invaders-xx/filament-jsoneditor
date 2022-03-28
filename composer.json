@@ -1,24 +1,26 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "invaders-xx/filament-jsoneditor",
+    "description": "Filament's JSON Editor input",
     "keywords": [
-        ":vendor_name",
+        "invaders-xx",
         "laravel",
-        ":package_slug"
+        "filament-jsoneditor",
+        "jsoneditor"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/invaders-xx/filament-jsoneditor",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
-            "role": "Developer"
+            "name": "David Vincent",
+            "email": "envahisseur@gmail.com",
+            "role": "Owner"
         }
     ],
     "require": {
         "php": "^8.0",
+        "filament/filament": "^2.0",
         "spatie/laravel-package-tools": "^1.9.2",
-        "illuminate/contracts": "^9.0"
+        "illuminate/contracts": "^8.74|^9.0"
     },
     "require-dev": {
         "nunomaduro/collision": "^6.0",
@@ -34,13 +36,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "InvadersXX\\FilamentJsoneditor\\": "src",
+            "InvadersXX\\FilamentJsoneditor\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "InvadersXX\\FilamentJsoneditor\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -54,10 +56,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "InvadersXX\\FilamentJsoneditor\\FilamentJsoneditorServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "FilamentJsoneditor": "InvadersXX\\FilamentJsoneditor\\Facades\\FilamentJsoneditor"
             }
         }
     },
