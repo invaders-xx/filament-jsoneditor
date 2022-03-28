@@ -19,26 +19,25 @@ composer require invaders-xx/filament-jsoneditor
 ```
 
 ```bash
-php artisan vendor:publish --tag="filament-jsoneditor-config"
+php artisan vendor:publish --tag=filament-jsoneditor-img
 ```
 
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
+This command will publish the jsoneditor button's img
 
 ## Usage
 
 ```php
-\InvadersXX\FilamentJsoneditor\Forms\JSONEditor::make('editor');
+[
+    \InvadersXX\FilamentJsoneditor\Forms\JSONEditor::make('editor');
+]
 ```
 ## Options
 ```php
-\InvadersXX\FilamentJsoneditor\Forms\JSONEditor::make('editor')
-    ->height(500) // Set height to 500px, default is 300
-    ->modes(['code', 'form', 'text', 'tree', 'view', 'preview']); // default is ['code', 'form', 'text', 'tree', 'view', 'preview']
+[
+    \InvadersXX\FilamentJsoneditor\Forms\JSONEditor::make('editor')
+        ->height(500) // Set height to 500px, default is 300
+        ->modes(['code', 'form', 'text', 'tree', 'view', 'preview']); // default is ['code', 'form', 'text', 'tree', 'view', 'preview']
+]
 ```
 ## Testing
 
