@@ -31,7 +31,11 @@ return [
 ## Usage
 
 ```php
+\InvadersXX\FilamentJsoneditor\Forms\JSONEditor::make('editor');
 ```
+## Options
+
+No options yet implemented.
 
 ## Testing
 
