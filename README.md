@@ -8,6 +8,7 @@
 
 If you need to have a JSON Editor field within your form. You have it !
 
+<img width="1863" alt="image" src="https://user-images.githubusercontent.com/604907/160436321-9ff47bb8-28a2-45af-98fe-a57802236178.png">
 
 ## Installation
 
