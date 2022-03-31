@@ -13,14 +13,14 @@ class JSONEditor extends Field implements JSONEditorOptions
 
     public string $view = 'filament-jsoneditor::json-editor';
 
-    public function modes(array $modes): self
+    public function modes(array | Closure | null $modes): static
     {
         $this->modes = $modes;
 
         return $this;
     }
 
-    public function height(int $height): self
+    public function height(int | Closure | null $height): static
     {
         $this->height = $height;
 
