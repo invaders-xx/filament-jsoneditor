@@ -4,9 +4,9 @@ namespace InvadersXX\FilamentJsoneditor\Interfaces;
 
 interface JSONEditorOptions
 {
-    public function modes(array $modes): self;
+    public function modes(array | Closure | null $modes): static;
 
-    public function height(int $height): self;
+    public function height(int | Closure | null $height): static;
 
     public function getHeight(): ?int;
 
