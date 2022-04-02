@@ -5,7 +5,6 @@ namespace InvadersXX\FilamentJsoneditor\Forms;
 use Closure;
 use Filament\Forms\Components\Field;
 
-
 class JSONEditor extends Field
 {
     public string $view = 'filament-jsoneditor::json-editor';
