@@ -4,23 +4,22 @@ namespace InvadersXX\FilamentJsoneditor\Forms;
 
 use Closure;
 use Filament\Forms\Components\Field;
-use InvadersXX\FilamentJsoneditor\Interfaces\JSONEditorOptions;
 
-class JSONEditor extends Field implements JSONEditorOptions
+
+class JSONEditor extends Field
 {
-    protected int | Closure | null $height = 300;
-    protected array | Closure | null $modes = ['code', 'form', 'text', 'tree', 'view', 'preview'];
-
     public string $view = 'filament-jsoneditor::json-editor';
+    protected int|Closure|null $height = 300;
+    protected array|Closure|null $modes = ['code', 'form', 'text', 'tree', 'view', 'preview'];
 
-    public function modes(array | Closure | null $modes): static
+    public function modes(array|Closure|null $modes): static
     {
         $this->modes = $modes;
 
         return $this;
     }
 
-    public function height(int | Closure | null $height): static
+    public function height(int|Closure|null $height): static
     {
         $this->height = $height;
 
