@@ -2,6 +2,10 @@
 
 All notable changes to `filament-jsoneditor` will be documented in this file.
 
+## 0.4.1 - 2022-04-02
+
+Remove Interface
+
 ## 0.3 - 2022-03-31
 
 **Full Changelog**: https://github.com/invaders-xx/filament-jsoneditor/compare/0.2...0.3
