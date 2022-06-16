@@ -1,6 +1,6 @@
 @php
     $statePath = $getStatePath();
-    if (if (is_array($statePath) || is_object($statePath) ) {
+    if (is_array($statePath) || is_object($statePath) ) {
         $statePath = json_encode($statePath);
     }
 @endphp
