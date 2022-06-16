@@ -1,9 +1,3 @@
-@php
-    $statePath = $getStatePath();
-    if (is_array($statePath) || is_object($statePath) ) {
-        $statePath = json_encode($statePath);
-    }
-@endphp
 <x-forms::field-wrapper
     :id="$getId()"
     :label="$getLabel()"
@@ -14,7 +8,7 @@
     :required="$isRequired()"
     :state-path="$getStatePath()"
 >
-    <div x-data="{ state: $wire.entangle('{{ $statePath }}') }"
+    <div x-data="{ state: $wire.entangle('{{ $getStatePath() }}') }"
          x-init="$nextTick(() => {
         const options = {
             modes: {{ $getModes() }},
