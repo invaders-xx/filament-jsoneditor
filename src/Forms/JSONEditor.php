@@ -46,7 +46,6 @@ class JSONEditor extends Field
         return json_encode($this->evaluate($this->modes));
     }
 
-
     public function getJsonFormatted(): bool
     {
         return $this->jsonFormatted;
