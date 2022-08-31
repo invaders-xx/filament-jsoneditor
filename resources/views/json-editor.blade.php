@@ -8,7 +8,13 @@
     :required="$isRequired()"
     :state-path="$getStatePath()"
 >
-    <div x-data="{ state: $wire.entangle('{{ $getStatePath() }}') }"
+    <div class="w-full" x-data="{
+            state: $wire.entangle('{{ $getStatePath() }}'),
+            isJson: {{ json_encode($getJsonFormatted()) }},
+            get formattedState() {
+                return this.isJson ? this.state : JSON.parse(this.state)
+            }
+        }"
          x-init="$nextTick(() => {
         const options = {
             modes: {{ $getModes() }},
@@ -35,10 +41,10 @@
         };
         if(typeof json_editor !== 'undefined'){
             json_editor = new JSONEditor($refs.editor, options);
-            json_editor.set(JSON.parse(state));
+            json_editor.set(formattedState);
         }else{
             let json_editor = new JSONEditor($refs.editor, options);
-            json_editor.set(JSON.parse(state));
+            json_editor.set(formattedState);
         }
      })"
          x-cloak
