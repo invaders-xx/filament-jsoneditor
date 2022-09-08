@@ -2,6 +2,10 @@
 
 All notable changes to `filament-jsoneditor` will be documented in this file.
 
+## Fix preview mode - 2022-09-08
+
+The modes is forced to ['preview'] when field is disabled
+
 ## 0.4.5 - 2022-08-31
 
 ### What's Changed
