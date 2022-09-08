@@ -43,6 +43,10 @@ class JSONEditor extends Field
 
     public function getModes(): ?string
     {
+        if ($this->isDisabled())
+        {
+            $this->modes = ['preview'];
+        }
         return json_encode($this->evaluate($this->modes));
     }
 

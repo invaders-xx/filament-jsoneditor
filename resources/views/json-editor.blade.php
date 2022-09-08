@@ -49,15 +49,8 @@
      })"
          x-cloak
          wire:ignore>
-        @unless($isDisabled())
             <div x-ref="editor" class="w-full ace_editor"
                  style="min-height: 30vh;height:{{ $getHeight() }}px"></div>
-        @else
-            <div
-                x-html="state"
-                class="max-w-none p-3 prose border border-gray-300 rounded shadow-sm"
-            ></div>
-        @endunless
     </div>
 </x-forms::field-wrapper>
 
