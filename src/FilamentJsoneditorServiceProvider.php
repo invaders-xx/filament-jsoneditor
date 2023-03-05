@@ -22,7 +22,18 @@ class FilamentJsoneditorServiceProvider extends PluginServiceProvider
     protected array $styles = [
         'invaders-filament-jsoneditor' => __DIR__ . '/../dist/jsoneditor/jsoneditor.min.css',
     ];
+    
+    protected function bootPublishing()
+    {
+        if (! $this->app->runningInConsole()) {
+            return;
+        }
 
+        $this->publishes([
+            __DIR__ . '/../dist/jsoneditor/img/jsoneditor-icons.svg' => public_path('filament/assets/img/jsoneditor-icons.svg'),
+        ], 'filament-jsoneditor-img');
+    }
+    
     public function configurePackage(Package $package): void
     {
         $package
