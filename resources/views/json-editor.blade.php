@@ -42,11 +42,19 @@
         if(typeof json_editor !== 'undefined'){
             json_editor = new JSONEditor($refs.editor, options);
             json_editor.set(formattedState);
-            $watch('state', (newState) => json_editor.set(newState));
+            $watch('state', (newState) => {
+                if (typeof newState === 'object') {
+                    json_editor.set(newState);
+                }
+            });
         }else{
             let json_editor = new JSONEditor($refs.editor, options);
             json_editor.set(formattedState);
-            $watch('state', (newState) => json_editor.set(newState));
+            $watch('state', (newState) => {
+                if (typeof newState === 'object') {
+                    json_editor.set(newState);
+                }
+            });
         }
      })"
          x-cloak
