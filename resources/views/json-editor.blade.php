@@ -1,4 +1,4 @@
-<x-forms::field-wrapper
+<x-filament-forms::field-wrapper
     :id="$getId()"
     :label="$getLabel()"
     :label-sr-only="$isLabelHidden()"
@@ -52,5 +52,5 @@
             <div x-ref="editor" class="w-full ace_editor"
                  style="min-height: 30vh;height:{{ $getHeight() }}px"></div>
     </div>
-</x-forms::field-wrapper>
+</x-filament-forms::field-wrapper>
 
