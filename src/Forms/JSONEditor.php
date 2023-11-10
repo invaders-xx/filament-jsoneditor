@@ -27,6 +27,14 @@ class JSONEditor extends Field
         return $this;
     }
 
+    /**
+     * @deprecated obsolete, kept for backward compatibility
+     */
+    public function isJson(bool $state = true): static
+    {
+        return $this;
+    }
+
     public function getHeight(): ?int
     {
         return $this->evaluate($this->height);
