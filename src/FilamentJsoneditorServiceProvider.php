@@ -21,7 +21,7 @@ class FilamentJsoneditorServiceProvider extends PackageServiceProvider
             ->hasViews();
 
         $this->publishes([
-            __DIR__ . '/../dist/jsoneditor/img/jsoneditor-icons.svg' => public_path('filament/assets/img/jsoneditor-icons.svg'),
+            __DIR__ . '/../dist/jsoneditor/img/jsoneditor-icons.svg' => public_path('css/awcodes/headings/img/jsoneditor-icons.svg'),
         ], 'filament-jsoneditor-img');
     }
 
