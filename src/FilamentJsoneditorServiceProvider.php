@@ -29,7 +29,7 @@ class FilamentJsoneditorServiceProvider extends PackageServiceProvider
     {
         FilamentAsset::register([
             Css::make('invaders-filament-jsoneditor', __DIR__ . '/../dist/jsoneditor/jsoneditor.min.css'),
-            Js::make('invaders-filament-jsoneditor', __DIR__ . '/../dist/jsoneditor/jsoneditor.min.js')
+            Js::make('invaders-filament-jsoneditor', __DIR__ . '/../dist/jsoneditor/jsoneditor.min.js'),
         ], 'awcodes/headings');
     }
 }
