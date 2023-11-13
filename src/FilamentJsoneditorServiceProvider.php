@@ -21,7 +21,7 @@ class FilamentJsoneditorServiceProvider extends PackageServiceProvider
             ->hasViews();
 
         $this->publishes([
-            __DIR__ . '/../dist/jsoneditor/img/jsoneditor-icons.svg' => public_path('filament/assets/img/jsoneditor-icons.svg'),
+            __DIR__ . '/../dist/jsoneditor/img/jsoneditor-icons.svg' => public_path('css/awcodes/headings/img/jsoneditor-icons.svg'),
         ], 'filament-jsoneditor-img');
     }
 
@@ -29,7 +29,7 @@ class FilamentJsoneditorServiceProvider extends PackageServiceProvider
     {
         FilamentAsset::register([
             Css::make('invaders-filament-jsoneditor', __DIR__ . '/../dist/jsoneditor/jsoneditor.min.css'),
-            Js::make('invaders-filament-jsoneditor', __DIR__ . '/../dist/jsoneditor/jsoneditor.min.js')
+            Js::make('invaders-filament-jsoneditor', __DIR__ . '/../dist/jsoneditor/jsoneditor.min.js'),
         ], 'awcodes/headings');
     }
 }

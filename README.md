@@ -24,6 +24,21 @@ php artisan vendor:publish --tag=filament-jsoneditor-img
 
 This command will publish the jsoneditor button's img
 
+## Required format
+The Eloquent Model data must be cast to array or json
+
+Example:
+
+```php
+class MyModel extends Model
+{
+    protected $casts = [
+        'my_field' => 'array',
+        'another_field' => 'encrypted:json',
+    ];
+}
+```
+
 ## Usage
 
 ```php
