@@ -16,24 +16,18 @@ class FilamentJsoneditorServiceProvider extends PackageServiceProvider
     {
         $package
             ->name(static::$name)
-            ->hasConfigFile()
-            ->hasAssets()
             ->hasViews();
 
         $this->publishes([
-            __DIR__ . '/../dist/jsoneditor/img/jsoneditor-icons.svg' => public_path('css/awcodes/headings/img/jsoneditor-icons.svg'),
-            __DIR__ . '/../dist/jsoneditor/jsoneditor.min.css' => public_path('css/awcodes/headings/jsoneditor.min.css'),
-            __DIR__ . '/../dist/jsoneditor/jsoneditor.min.js' => public_path('js/awcodes/headings/jsoneditor.min.js'),
-        ], 'filament-jsoneditor');
+            __DIR__ . '/../dist/jsoneditor/img/jsoneditor-icons.svg' => public_path('css/invaders/jsoneditor/img/jsoneditor-icons.svg'),
+        ], 'filament-jsoneditor-img');
     }
 
-    public function packageRegistered(): void
+    public function packageBooted(): void
     {
-        if ($this->app->runningInConsole()) {
-            FilamentAsset::register([
-                Css::make('invaders-filament-jsoneditor', __DIR__ . '/../dist/jsoneditor/jsoneditor.min.css'),
-                Js::make('invaders-filament-jsoneditor', __DIR__ . '/../dist/jsoneditor/jsoneditor.min.js'),
-            ], 'awcodes/headings');
-        }
+        FilamentAsset::register([
+            Css::make('invaders-filament-jsoneditor', __DIR__ . '/../dist/jsoneditor/jsoneditor.min.css')->loadedOnRequest(),
+            Js::make('invaders-filament-jsoneditor', __DIR__ . '/../dist/jsoneditor/jsoneditor.min.js')->loadedOnRequest(),
+        ], 'invaders/jsoneditor');
     }
 }

@@ -9,9 +9,9 @@
         :state-path="$getStatePath()"
 >
     <div class="w-full"
-         x-load-css="['{{ asset('css/awcodes/headings/invaders-filament-jsoneditor.css') }}']"
+         x-load-css="[@js(\Filament\Support\Facades\FilamentAsset::getStyleHref('invaders-filament-jsoneditor', package: 'invaders/jsoneditor'))]"
          data-js-before="app.js"
-         x-load-js="['{{ asset('js/awcodes/headings/invaders-filament-jsoneditor.js') }}']"
+         x-load-js="[@js(\Filament\Support\Facades\FilamentAsset::getScriptSrc('invaders-filament-jsoneditor', package: 'invaders/jsoneditor'))]"
          data-dispatch="jsoneditor-loaded"
          x-on:jsoneditor-loaded-js.window="start"
          x-data="{
@@ -19,6 +19,7 @@
             editor: null,
             destroy() {
                 this.editor = null;
+                console.info('destroy');
             },
             start() {
                 $nextTick(() => {
