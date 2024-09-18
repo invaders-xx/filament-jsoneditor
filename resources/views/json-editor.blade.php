@@ -19,7 +19,6 @@
             editor: null,
             destroy() {
                 this.editor = null;
-                console.info('destroy');
             },
             start() {
                 $nextTick(() => {
